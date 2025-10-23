@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persons>
+    <person>
+        <birthday/>
+        <city>Уссурийск</city>
+        <firstName>Алексей</firstName>
+        <lastName>Леончик</lastName>
+        <postalCode>692503</postalCode>
+        <street>Краснознаменная 155 - 6</street>
+    </person>
+    <person>
+        <birthday/>
+        <city>Уссурийск</city>
+        <firstName>Ольга</firstName>
+        <lastName>Чистова</lastName>
+        <postalCode>692503</postalCode>
+        <street>Краснознаменная 155 - 6</street>
+    </person>
+</persons>
