@@ -28,6 +28,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.prefs.Preferences;
 
 public class Main extends Application {
@@ -41,10 +43,16 @@ public class Main extends Application {
      */
     public Main() {
         //  В качестве образца добавляем некоторые данные
-        personData.add(new Person("Алексей", "Леончик", "Уссурийск",
+
+        /*personData.add(new Person("Алексей", "Леончик", "Уссурийск",
                 "Краснознаменная 155 - 6", 692503, LocalDate.of(1971, 4, 16)));
         personData.add(new Person("Ольга", "Чистова", "Уссурийск",
-                "Краснознаменная 155 - 6", 692503, LocalDate.of(1960, 5, 17)));
+                "Краснознаменная 155 - 6", 692503, LocalDate.of(1960, 5, 17)));*/
+
+        /*personData.add(new Person("Алексей", "Леончик", "Уссурийск",
+                "Краснознаменная 155 - 6", 692503, "16.04.1971"));
+        personData.add(new Person("Ольга", "Чистова", "Уссурийск",
+                "Краснознаменная 155 - 6", 692503, "17.05.1960"));*/
     }
 
     /**
@@ -226,15 +234,15 @@ public class Main extends Application {
      */
     public void loadPersonDataFromFile(File file) {
         try {
-            System.out.println("loadPersonDataFromFile\n^^^^^^^^^^^^^^^^^^^^^^^^^");
             JAXBContext context = JAXBContext.newInstance(PersonListWrapper.class);
             Unmarshaller um = context.createUnmarshaller();
             // Чтение XML из файла и демаршализация
             // TODO: не работает unMarshal
-//            PersonListWrapper wrapper = (PersonListWrapper) um.unmarshal(file);
-//            personData.clear();
-//            personData.addAll(wrapper.getPersons());
-            personData.add(new Person("Имя", "Фамилия", "Город", "Улица", 123456, LocalDate.now()));
+            PersonListWrapper wrapper = (PersonListWrapper) um.unmarshal(file);
+            personData.clear();
+            personData.addAll(wrapper.getPersons());
+//            personData.add(new Person("Имя", "Фамилия", "Город", "Улица", 123456,
+//                    LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))));
             // Сохраним путь к файлу
             setPersonFilePath(file);
         } catch (Exception e) {

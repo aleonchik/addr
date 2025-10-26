@@ -82,7 +82,8 @@ public class PersonOverviewController {
             streetLabel.setText(person.getStreet());
             postalCodeLabel.setText(Integer.toString(person.getPostalCode()));
             cityLabel.setText(person.getCity());
-            birthdayLabel.setText(DateUtil.format(person.getBirthday()));
+//            birthdayLabel.setText(DateUtil.format(person.getBirthday()));
+            birthdayLabel.setText(person.getBirthday());
         } else {
             // Если Person = null, убираем весь текст
             firstNameLabel.setText("");

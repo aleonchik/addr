@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <persons>
     <person>
-        <birthday/>
+        <birthday>16.04.1971</birthday>
         <city>Уссурийск</city>
         <firstName>Алексей</firstName>
         <lastName>Леончик</lastName>
@@ -9,11 +9,27 @@
         <street>Краснознаменная 155 - 6</street>
     </person>
     <person>
-        <birthday/>
+        <birthday>17.05.1960</birthday>
         <city>Уссурийск</city>
         <firstName>Ольга</firstName>
         <lastName>Чистова</lastName>
         <postalCode>692503</postalCode>
         <street>Краснознаменная 155 - 6</street>
+    </person>
+    <person>
+        <birthday>13.09.1975</birthday>
+        <city>Уссурийск</city>
+        <firstName>Сергей Г.</firstName>
+        <lastName>Клетчин</lastName>
+        <postalCode>692500</postalCode>
+        <street>Промышленная 5а - 45</street>
+    </person>
+    <person>
+        <birthday>12.09.1972</birthday>
+        <city>Уссурийск</city>
+        <firstName>Галина</firstName>
+        <lastName>Мороз</lastName>
+        <postalCode>692503</postalCode>
+        <street>Пионерская 92 - 32</street>
     </person>
 </persons>

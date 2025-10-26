@@ -2,6 +2,8 @@ package fx.model;
 
 import javafx.beans.property.*;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 /**
@@ -17,19 +19,23 @@ public class Person {
     private final StringProperty street;
     private final IntegerProperty postalCode;
     private final StringProperty city;
-    private final ObjectProperty<LocalDate> birthday;
+//    private final ObjectProperty<LocalDate> birthday;
+    private final StringProperty birthday;
 
     public Person() {
-        this("", "", "", "", 0, LocalDate.now());
+        // SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+        this("", "", "", "", 0, "");
     }
 
     /**
      * Конструктор по умолчанию
      */
+    /*public Person(StringProperty firstName, StringProperty lastName,
+                  StringProperty street, IntegerProperty postalCode,
+                  StringProperty city, ObjectProperty<LocalDate> birthday) {*/
     public Person(StringProperty firstName, StringProperty lastName,
                   StringProperty street, IntegerProperty postalCode,
-                  StringProperty city, ObjectProperty<LocalDate> birthday) {
-//        this(null, null);
+                  StringProperty city, StringProperty birthday) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.street = street;
@@ -39,13 +45,14 @@ public class Person {
     }
 
     public Person(String firstName, String lastName, String cityName, String streetName,
-                  Integer postalCode, LocalDate birthday) {
+                  Integer postalCode, String birthday) {
         this.firstName = new SimpleStringProperty(firstName);
         this.lastName = new SimpleStringProperty(lastName);
         this.city = new SimpleStringProperty(cityName);
         this.street = new SimpleStringProperty(streetName);
         this.postalCode = new SimpleIntegerProperty(postalCode);
-        this.birthday = new SimpleObjectProperty<LocalDate>(birthday);
+//        this.birthday = new SimpleObjectProperty<LocalDate>(birthday);
+        this.birthday = new SimpleStringProperty(birthday);
     }
 
     /**
@@ -85,7 +92,11 @@ public class Person {
     public void setCity(String city) { this.city.set(city); }
     public StringProperty cityProperty() { return city; }
 
-    public LocalDate getBirthday() { return birthday.get(); }
+    /*public LocalDate getBirthday() { return birthday.get(); }
     public void setBirthday(LocalDate birthday) { this.birthday.set(birthday); }
-    public ObjectProperty<LocalDate> birthdayProperty() { return birthday; }
+    public ObjectProperty<LocalDate> birthdayProperty() { return birthday; }*/
+    public String getBirthday() { return birthday.get(); }
+    public void setBirthday(String birthday) { this.birthday.set(birthday); }
+    public StringProperty birthdayProperty() { return birthday; }
+
 }
