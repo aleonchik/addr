@@ -11,6 +11,8 @@ addr
 Переписал дату рождения в **Person** на простую строку...
 
 
+
+
 Компиляция
 ===
 
@@ -106,5 +108,15 @@ XMLL=/home/alexey/jlib/xml
 java -p $CLASSES:$FXX:$XMLL \
     --add-modules ALL-MODULE-PATH \
     -m fx/fx.Main
+```
+
+Заключение
+===
+К сожалению я не сумел сделать один большой **JAR** файл чтобы все запускалось с него. При 
+помощи maven-модулей собираем все необходимые библиотеки в один каталог: **./target/classes/lib** 
+В этом случае запуск выглядит так:
+
+```shell
+alexey@honor:~/jsrc/addr/target/classes$ java -p .:lib -m fx/fx.Main
 ```
 

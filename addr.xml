@@ -32,4 +32,12 @@
         <postalCode>692503</postalCode>
         <street>Пионерская 92 - 32</street>
     </person>
+    <person>
+        <birthday>16.10.1980</birthday>
+        <city>Уссурийск</city>
+        <firstName>Анна</firstName>
+        <lastName>костырко</lastName>
+        <postalCode>345</postalCode>
+        <street>Пархоменко 17 - 23</street>
+    </person>
 </persons>
